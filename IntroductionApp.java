@@ -1,22 +1,28 @@
 import java.util.*;
 public class IntroductionApp{
 	public static void main(String[] args){
-//		int n = new Random(1).nextInt(10); //seed値を設定 Random (1)<- 1がシード値
-		String name = "葉山";
+		String[] params={"体力","魔力","パワー","きようさ","すばやさ"};
+		String[] races={"人間","ハイエルフ","トロル","ノーム"};
+		String[] classes={"戦士","盗賊","僧侶","魔術師"};
+		int[][] raceMatrix={
+			{10,10,10,10,10},
+			{0,20,0,10,20},
+			{30,0,20,0,0},
+			{10,0,0,25,20},
+		};
+		double[][] classMatrix={
+			{1.6,1,1.4,1,1},
+			{1.1,1,1.2,1.3,1.3},
+			{1.3,1.5,1.1,1,1},
+			{1,1.9,1,1,1.1},
+		};
+		Scanner sc = new Scanner(System.in);
+		System.out.print("名前を入力してください＞");
+		String name = sc.nextLine();
 		int seed = calcseed(name);
-		int[] maxArr = {100, 100, 50, 50, 50};
-		int[] status = makeStatus(seed, maxArr);
-		System.out.println(Arrays.toString(status));
-		int[] h = {10, 10, 10, 10, 10};
-		raceBonus(status, h);
-		System.out.println(Arrays.toString(status));
-		double[] s = {1.6, 1, 1.4, 1, 1};
-		classBonus(status, s);
-		System.out.println(Arrays.toString(status));
-		int total = sumStatus(status);
-		System.out.println("合計は" + total);
-		String[] params = {"体力","魔力","パワー","きようさ","すばやさ"};
-		showStatus(status, params);
+		int[] status = makeStatus(seed, new int[] {100,100,50,50,50});
+		System.out.println("初期ステータスが決定しました");
+		showStatus(status,params);
 	}
 	static int calcseed(String name){
 		//seed(種)
