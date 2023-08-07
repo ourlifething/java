@@ -9,3 +9,8 @@ public class Code5_12{
 		printArray(array);
 	}
 }
+/*
+1
+2
+3
+*/
