@@ -14,3 +14,8 @@ public class Code5_10{
 		System.out.println(add("Hello", "World"));
 	}
 }
+/*
+30
+6.2
+HelloWorld
+*/
