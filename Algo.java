@@ -1,5 +1,7 @@
 import java.util.*;
 
+//  reverse,sort,shuffle,Linearsearch
+
 public class Algo{
 	public static void main(String[] args){
 		
@@ -50,9 +52,6 @@ public class Algo{
 		}else{
 			System.out.prinln("含まれている");
 		}
-
-
-
 
 	}
 }
